@@ -2,3 +2,40 @@ wget -O splunkforwarder-10.2.2-80b90d638de6-windows-x64.msi "https://download.sp
 
 
 wget -O splunk-10.2.2-80b90d638de6-linux-amd64.deb "https://download.splunk.com/products/splunk/releases/10.2.2/linux/splunk-10.2.2-80b90d638de6-linux-amd64.deb"
+
+
+
+# Windows Security Events (logins, account changes, privilege use)
+[WinEventLog:Security]
+disabled = false
+index = default
+sourcetype = WinEventLog:Security
+start_from = oldest
+
+# Windows System Events
+[WinEventLog:System]
+disabled = false
+index = default
+sourcetype = WinEventLog:System
+
+# Windows Application Events
+[WinEventLog:Application]
+disabled = false
+index = default
+sourcetype = WinEventLog:Application
+
+# PowerShell Script Block Logging
+[XmlWinEventLog:Microsoft-Windows-PowerShell/Operational]
+disabled = false
+index = default
+sourcetype = XmlWinEventLog:PowerShell
+
+# Windows Defender Events
+[XmlWinEventLog:Microsoft-Windows-Windows Defender/Operational]
+disabled = false
+index = default
+
+# Windows Firewall Events
+[XmlWinEventLog:Microsoft-Windows-Windows Firewall With Advanced Security/Firewall]
+disabled = false
+index = default
