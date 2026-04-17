@@ -1,0 +1,1 @@
+wget -O splunkforwarder-10.2.2-80b90d638de6-windows-x64.msi "https://download.splunk.com/products/universalforwarder/releases/10.2.2/windows/splunkforwarder-10.2.2-80b90d638de6-windows-x64.msi"
